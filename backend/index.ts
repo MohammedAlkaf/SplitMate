@@ -17,6 +17,8 @@ const PORT = 4000;
 
   const db = mongoose.connection.db;
 
+  if (!db) throw new Error("Database connection failed!");
+
   // Apollo Server
   const server = new ApolloServer({
     typeDefs,
